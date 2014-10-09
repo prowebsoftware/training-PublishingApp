@@ -8,6 +8,8 @@ Ext.define('Publishing.Application', {
     
     name: 'Publishing',
 
+    defaultToken: 'home',
+
     stores: [
         // TODO: add global / shared stores here
     ],
