@@ -23,7 +23,10 @@ Ext.define("Publishing.view.home.Home",{
         flex: 1
     },{
         xtype: 'panel',
-        title: 'Edit Post',
-        flex: 1
+        itemId: 'form',
+        flex: 1,
+        layout: {
+            type: 'card'
+        }
     }]
 });
