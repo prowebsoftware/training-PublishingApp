@@ -8,7 +8,7 @@ Ext.define('Publishing.store.Posts', {
     proxy: {
         type: 'rest',
         api: {
-            read: 'http://jsonplaceholder.typicode.com/posts'
+            read: 'http://jsonplaceholder.typicode.com/posts?userId=1'
         },
         reader: {
             type: 'json'

@@ -26,5 +26,14 @@ Ext.define("Publishing.view.home.singlepost.Singlepost",{
         bind: {
             html: '{record.body}'
         }
-    }]
+    }],
+
+    listeners: {
+        render: function( view ){
+            var that = this;
+            view.el.on('click', function(){
+                that.fireEvent('click');
+            });
+        }
+    }
 });
