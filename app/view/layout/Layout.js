@@ -24,6 +24,7 @@ Ext.define("Publishing.view.layout.Layout",{
     },{
         xtype: 'panel',
         region: 'center',
-        html: 'Main'
+        html: 'Main',
+        itemId: 'mainContent'
     }]
 });
