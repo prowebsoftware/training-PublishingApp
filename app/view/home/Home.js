@@ -4,7 +4,8 @@ Ext.define("Publishing.view.home.Home",{
 
     requires: [
         'Publishing.view.home.HomeController',
-        'Publishing.view.home.HomeModel'
+        'Publishing.view.home.HomeModel',
+        'Publishing.view.home.post.Posts'
     ],
 
     controller: "home-home",
@@ -18,8 +19,7 @@ Ext.define("Publishing.view.home.Home",{
     },
 
     items: [{
-        xtype: 'panel',
-        title: 'Posts',
+        xtype: 'posts',
         flex: 1
     },{
         xtype: 'panel',
