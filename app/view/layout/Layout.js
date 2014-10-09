@@ -24,7 +24,9 @@ Ext.define("Publishing.view.layout.Layout",{
     },{
         xtype: 'panel',
         region: 'center',
-        html: 'Main',
+        layout: {
+            type: 'card'
+        },
         itemId: 'mainContent'
     }]
 });
