@@ -4,17 +4,22 @@ Ext.define("Publishing.view.home.post.Posts",{
 
     xtype: 'posts',
 
-    autoScroll: true,
-
     requires: [
         'Publishing.view.home.post.PostsController',
         'Publishing.view.home.post.PostsModel'
     ],
+
+    autoScroll: true,
 
     controller: "home-post-posts",
     viewModel: {
         type: "home-post-posts"
     },
 
-    title: 'Posts'
+    title: 'Posts',
+
+    layout: {
+        type: 'vbox',
+        align: 'stretch'
+    }
 });
