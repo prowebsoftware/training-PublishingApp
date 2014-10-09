@@ -10,7 +10,8 @@ Ext.define('Publishing.view.home.singlepost.SinglepostController', {
     },
 
     onClick: function(){
-        console.log('hi ', this.getView().getViewModel().data.record );
+        var record = this.getView().getViewModel().data.record;
+        this.redirectTo('home/'+record.getId());
     }
     
 });
