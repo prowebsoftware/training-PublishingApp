@@ -2,6 +2,8 @@ Ext.define('Publishing.view.layout.LayoutController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.layout-layout',
 
+    require: ['Publishing.home.Home'],
+
     routes: {
         'home' : 'onHome',
         'users' : 'onUsers'
@@ -9,7 +11,10 @@ Ext.define('Publishing.view.layout.LayoutController', {
 
     onHome : function(){
         console.log('home');
-        this.getView().down('panel[region=center]').setHtml('home');
+
+        var view = Ext.create('Publishing.view.home.Home');
+        this.getView().down('panel[region=center]').setActiveItem(view);
+
     },
 
     onUsers : function(){
