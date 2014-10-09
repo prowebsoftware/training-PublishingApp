@@ -10,15 +10,13 @@ Ext.define('Publishing.view.home.post.PostsController', {
         var store = Ext.getStore('Posts');
 
 
-        store.on('datachanged', this.renderPosts, this);
-
+        store.on('datachanged', this.renderPosts, this, { single:true });
 
     },
 
     renderPosts: function( store ){
         var view = this.getView();
 
-        console.log('Here...');
 
         view.suspendLayout = true;
 
