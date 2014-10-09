@@ -5,8 +5,6 @@ Ext.define('Publishing.store.Posts', {
 
     autoLoad: true,
 
-    storeId: 'posts',
-
     proxy: {
         type: 'rest',
         api: {
