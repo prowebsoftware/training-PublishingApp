@@ -19,10 +19,15 @@ Ext.define("Publishing.view.home.post.edit.Form",{
         align: 'stretch'
     },
 
-    tbar: ['->', {
+    tbar: [{
+        text: 'New',
+        handler: 'onNew'
+
+    },'->', {
         iconCls: null,
         //glyph: 76,
         text:'Save',
+        reference: 'saveButton',
         bind: {
             disabled: '{!record}'
         },
