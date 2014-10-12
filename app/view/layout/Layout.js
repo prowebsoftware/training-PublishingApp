@@ -6,6 +6,7 @@ Ext.define("Publishing.view.layout.Layout",{
 
     requires: [
         'Publishing.view.home.post.Posts',
+        'Publishing.view.home.post.comments.Comments',
         'Publishing.view.layout.LayoutController',
         'Publishing.view.layout.LayoutModel'
     ],
@@ -26,11 +27,22 @@ Ext.define("Publishing.view.layout.Layout",{
         flex: 1
     },{
         xtype: 'panel',
-        region: 'east',
-        xtype: 'editform',
-        title: 'Edit Post',
-        reference: 'editform',
         flex: 1,
-        bodyPadding: 10
+        region: 'east',
+        layout: {
+            type: 'vbox',
+            align: 'stretch'
+        },
+        items: [{
+            xtype: 'editform',
+            title: 'Edit Post',
+            reference: 'editform',
+            bodyPadding: 10,
+            flex: 1
+        },{
+            xtype: 'comments',
+            title: 'Comments',
+            flex: 1
+        }]
     }]
 });
