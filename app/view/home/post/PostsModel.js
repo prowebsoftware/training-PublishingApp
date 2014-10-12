@@ -1,8 +1,34 @@
 Ext.define('Publishing.view.home.post.PostsModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.home-post-posts',
-    data: {
-        name: 'Publishing'
-    }
 
+    requires: ['Publishing.model.Post'],
+
+    data: {
+        editrecord: null
+    },
+
+    stores: {
+        posts: {
+
+            model: 'Publishing.model.Post',
+            autoLoad: true,
+
+            proxy: {
+                type: 'rest',
+
+                url: 'http://localhost:3000/posts',
+                reader: {
+                    type: 'json'
+                },
+
+                // Disable all query string params on the proxy manually
+                pageParam: false,
+                startParam: false,
+                limitParam: false,
+                noCache: false
+
+            }
+        }
+    }
 });

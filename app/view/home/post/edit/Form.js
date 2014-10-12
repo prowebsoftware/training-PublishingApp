@@ -19,10 +19,37 @@ Ext.define("Publishing.view.home.post.edit.Form",{
         align: 'stretch'
     },
 
+    tbar: ['->', {
+        iconCls: null,
+        //glyph: 76,
+        text:'Save',
+        bind: {
+            disabled: '{!record}'
+        },
+        disabled: true,
+        handler: 'onSave'
+    },{
+        iconCls: null,
+        //glyph: 76,
+        text:'Delete',
+        bind: {
+            disabled: '{!record}'
+        },
+        disabled: true,
+        handler: 'onDelete'
+    }],
+
     items: [{
         xtype: 'textfield',
         fieldLabel: 'Title',
         bind: '{record.title}',
         height: 30
-    }]
+    },{
+        xtype: 'textarea',
+        fieldLabel: 'Body',
+        bind: '{record.body}',
+        flex: 1
+    }],
+
+    handler: 'onSubmit'
 });
