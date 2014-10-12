@@ -2,11 +2,7 @@ Ext.define('Publishing.view.home.post.PostsModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.home-post-posts',
 
-    requires: ['Publishing.model.Post'],
-
-    data: {
-        editrecord: null
-    },
+    requires: ['Publishing.model.Post', 'Publishing.model.Comment'],
 
     stores: {
         posts: {

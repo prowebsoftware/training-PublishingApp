@@ -19,6 +19,10 @@ Ext.define("Publishing.view.home.post.edit.Form",{
         align: 'stretch'
     },
 
+    bind: {
+        title: '{record.title}'
+    },
+
     tbar: [{
         text: 'New',
         handler: 'onNew'
