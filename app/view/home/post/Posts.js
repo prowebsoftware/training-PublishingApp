@@ -1,6 +1,6 @@
 
 Ext.define("Publishing.view.home.post.Posts",{
-    extend: "Ext.panel.Panel",
+    extend: "Ext.grid.Panel",
 
     xtype: 'posts',
 
@@ -9,7 +9,6 @@ Ext.define("Publishing.view.home.post.Posts",{
         'Publishing.view.home.post.PostsModel'
     ],
 
-    autoScroll: true,
 
     controller: "home-post-posts",
     viewModel: {
@@ -18,8 +17,15 @@ Ext.define("Publishing.view.home.post.Posts",{
 
     title: 'Posts',
 
-    layout: {
-        type: 'vbox',
-        align: 'stretch'
+    bind: {
+        store: '{posts}'
+    },
+
+    columns: [
+        { text: 'Title',  dataIndex: 'title', flex: 1 }
+    ],
+
+    listeners: {
+        rowclick: 'onRowClick'
     }
 });

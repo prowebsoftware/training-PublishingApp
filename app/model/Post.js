@@ -1,6 +1,6 @@
 Ext.define('Publishing.model.Post', {
     extend: 'Ext.data.Model',
-    
+
     fields: [
         { name: 'id', type: 'int' },
         { name: 'userId', type: 'int' },

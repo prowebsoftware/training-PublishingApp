@@ -13,7 +13,6 @@ Ext.define('Publishing.Application', {
 
     stores: [
         // TODO: add global / shared stores here
-        'Posts'
     ],
     
     launch: function () {
