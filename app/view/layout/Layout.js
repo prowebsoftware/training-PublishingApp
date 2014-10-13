@@ -22,6 +22,13 @@ Ext.define("Publishing.view.layout.Layout",{
 
     items: [{
         xtype: 'panel',
+        region: 'north',
+        tbar: [{
+            text: 'Users',
+            handler: 'showUsers'
+        }]
+    },{
+        xtype: 'panel',
         region: 'center',
         xtype: 'posts',
         flex: 1
