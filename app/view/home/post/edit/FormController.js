@@ -55,6 +55,8 @@ Ext.define('Publishing.view.home.post.edit.FormController', {
         this.lookupReference('saveButton').enable();
         // clear the form
         this.resetForm();
+
+        this.getView().findParentByType('layout').down('comments').getStore().removeAll();
     },
 
     resetForm: function(){

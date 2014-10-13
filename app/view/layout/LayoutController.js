@@ -4,19 +4,6 @@ Ext.define('Publishing.view.layout.LayoutController', {
 
     requires: [
         'Publishing.view.home.post.edit.Form'
-    ],
-
-    routes: {
-        'home' : 'onHome',
-        'home/:id' : 'onHome',
-        'users' : 'onUsers'
-    },
-
-    onHome : function( id ){
-        console.log('home ', id);
-
-
-
-    }
+    ]
     
 });
