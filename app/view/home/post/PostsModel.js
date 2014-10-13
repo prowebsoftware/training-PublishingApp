@@ -7,6 +7,7 @@ Ext.define('Publishing.view.home.post.PostsModel', {
     stores: {
         posts: {
 
+            storeId: 'posts',
             model: 'Publishing.model.Post',
             autoLoad: true,
 
