@@ -9,7 +9,6 @@ Ext.define('Publishing.view.layout.LayoutController', {
 
     showUsers: function(){
         var window = Ext.create('Publishing.view.users.Users', {
-
         });
 
         window.show();

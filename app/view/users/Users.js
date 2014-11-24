@@ -56,9 +56,9 @@ Ext.define("Publishing.view.users.Users",{
             bind: '{userposts}',
             reference: 'usersposts',
             flex: 2.5,
-            hideHeaders: true,
+            //hideHeaders: true,
             columns: [{
-                //header: false,
+                header: 'Title',
                 dataIndex: 'title',
                 flex: 1
             }]
