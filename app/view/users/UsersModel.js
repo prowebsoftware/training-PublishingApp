@@ -7,9 +7,11 @@ Ext.define('Publishing.view.users.UsersModel', {
 
             model: 'Publishing.model.User',
             autoLoad: true,
-
+            storeId: 'users',
             proxy: {
                 type: 'rest',
+
+
 
                 url: 'http://localhost:3000/users',
                 reader: {

@@ -13,13 +13,15 @@ Ext.define("Publishing.view.users.Users",{
         'Publishing.view.users.UsersController',
         'Publishing.view.users.UsersModel',
         'Publishing.model.User',
-        'Publishing.view.users.edit.Form'
+        'Publishing.view.users.edit.Form',
+        'Ext.draw.*',
+        'Ext.chart.*'
     ],
 
     title: 'Users',
     //modal: true,
     height: 500,
-    width: 800,
+    width: 950,
     layout: {
         type: 'hbox',
         align: 'stretch'
@@ -63,5 +65,61 @@ Ext.define("Publishing.view.users.Users",{
                 flex: 1
             }]
         }]
-    }]
+    },
+        {
+            xtype: 'container',
+            flex: 1.5,
+            layout: {
+                type: 'vbox',
+                align: 'stretch'
+            },
+            items: [
+                {
+                    xtype: 'cartesian',
+                    bind: '{users}',
+                    flex: 1,
+                    axes: [{
+                        type: 'numeric',
+                        position: 'left',
+                        title: {
+                            text: 'Number of Posts',
+                            fontSize: 15
+                        },
+                        fields: 'postCount'
+                    }, {
+                        type: 'category',
+                        position: 'bottom',
+                        title: {
+                            text: 'User',
+                            fontSize: 15
+                        },
+                        fields: 'username'
+                    }],
+                    series: {
+                        type: 'bar',
+                        xField: 'username',
+                        yField: 'postCount',
+                        style: {
+                            fill: 'blue'
+                        }
+                    }
+                },
+                {
+                    xtype: 'polar',
+                    interactions: 'rotate',
+                    bind: '{users}',
+                    flex: 1,
+                    series: {
+                        type: 'pie',
+                        label: {
+                            field: 'username',
+                            display: 'rotate'
+                        },
+                        xField: 'postCount',
+                        donut: 30
+                    }
+                }
+            ]
+        }
+    ]
 });

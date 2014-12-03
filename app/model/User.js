@@ -1,6 +1,10 @@
 Ext.define('Publishing.model.User', {
     extend: 'Ext.data.Model',
 
+    requires: [
+        'Publishing.model.Post'
+    ],
+
     fields: [{
         name: 'street',
         mapping: function(data){
@@ -21,6 +25,19 @@ Ext.define('Publishing.model.User', {
         mapping: function(data){
             return data.address.suite;
         }
-    }
+    },
+        {
+            name: 'postCount',
+            convert: function(v, model) {
+                var results;
+
+
+                results = Ext.getStore('posts').queryBy(function(item) {
+                    return item.data.userId === model.data.id;
+                });
+
+                return results.length;
+            }
+        }
     ]
 });

@@ -1,2 +1,2 @@
 // @tag full-page
-// @require /Users/ashleycoker/Documents/PublishingApp/app.js
+// @require /Users/tomcooksey/Websites/Proweb/Training/training-PublishingApp/app.js
