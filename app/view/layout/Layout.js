@@ -26,6 +26,9 @@ Ext.define("Publishing.view.layout.Layout",{
         tbar: [{
             text: 'Users',
             handler: 'showUsers'
+        },{
+            text: 'Promises Example',
+            handler: 'runPromises'
         }]
     },{
         xtype: 'panel',

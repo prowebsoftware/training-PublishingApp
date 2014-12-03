@@ -4,6 +4,16 @@
  * details.
  */
 
+Ext.Loader.setConfig({
+
+    enabled: true,
+    disableCaching: false,
+    paths: {
+        //Contains the Deferred library used for promises
+        'Ext.ux' : 'Ext.ux'
+    }
+});
+
 Ext.define('Publishing.Application', {
     extend: 'Ext.app.Application',
     
