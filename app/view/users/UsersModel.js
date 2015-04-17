@@ -23,9 +23,6 @@ Ext.define('Publishing.view.users.UsersModel', {
                 noCache: false
 
             }
-        },
-        userposts: {
-            source: 'posts'
         }
     }
 

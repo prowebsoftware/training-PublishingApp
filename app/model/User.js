@@ -1,32 +1,17 @@
 Ext.define('Publishing.model.User', {
     extend: 'Ext.data.Model',
 
-    fields: [{
-        name: 'street',
-        mapping: function(data){
-            return data.address.street;
-        }
-    },{
-        name: 'city',
-        mapping: function(data){
-            return data.address.city;
-        }
-    },{
-        name: 'zipcode',
-        mapping: function(data){
-            return data.address.zipcode;
-        }
-    },{
-        name: 'suite',
-        mapping: function(data){
-            return data.address.suite;
-        }
-    }
-    ],
+    requires: ['Publishing.model.Address'],
 
     hasMany:[{
         name: 'posts',
         model: 'Publishing.model.Post',
         associatedKey: 'posts'
+    }],
+
+    hasOne: [{
+        //name: 'address', // not required as getAddress auto created.
+        model: 'Publishing.model.Address',
+        associationKey: 'address'
     }]
 });

@@ -85,7 +85,8 @@ Ext.define("Publishing.view.users.edit.Form",{
                     items: [{
                         labelWidth: 110,
                         fieldLabel: 'Street Address',
-                        name: 'street',
+                        //name: 'street',
+                        bind: '{record.address.street}',
                         flex: 1,
                         listeners: {
                             scope: this
