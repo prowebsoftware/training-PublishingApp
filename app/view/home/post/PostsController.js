@@ -56,8 +56,10 @@ Ext.define('Publishing.view.home.post.PostsController', {
         this.editform.getViewModel().set( 'record', record );
         this.editform.getForm().loadRecord( record );
 
-        Publishing.model.Comment.getProxy().setUrl('http://localhost:3000/posts/'+record.get('id')+'/comments');
-        this.commentsgrid.getStore().load();
+        //Publishing.model.Comment.getProxy().setUrl('http://localhost:3000/posts/'+record.get('id')+'/comments');
+        //this.commentsgrid.getStore().load();
+        
+        this.commentsgrid.setStore(record.comments());
 
         this.postsgrid.getSelectionModel().select(record);
     }
