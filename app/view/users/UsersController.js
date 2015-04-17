@@ -17,11 +17,13 @@ Ext.define('Publishing.view.users.UsersController', {
         this.usersform.getViewModel().set( 'record', record );
         this.usersform.getForm().loadRecord( record );
 
-        this.usersposts.getStore().clearFilter();
+        /*this.usersposts.getStore().clearFilter();
         this.usersposts.getStore().addFilter({
             property: 'userId',
             value: record.get('id')
-        });
+        });*/
+
+        this.usersposts.setStore(record.posts());
 
     }
     

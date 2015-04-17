@@ -22,5 +22,11 @@ Ext.define('Publishing.model.User', {
             return data.address.suite;
         }
     }
-    ]
+    ],
+
+    hasMany:[{
+        name: 'posts',
+        model: 'Publishing.model.Post',
+        associatedKey: 'posts'
+    }]
 });
