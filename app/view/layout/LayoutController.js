@@ -4,8 +4,8 @@ Ext.define('Publishing.view.layout.LayoutController', {
 
     requires: [
         'Publishing.view.home.post.edit.Form',
-        'Publishing.view.users.Users',
-        'Ext.ux.AjaxPromise'
+        'Publishing.view.users.Users'
+        //'Ext.ux.AjaxPromise'
     ],
 
     showUsers: function(){

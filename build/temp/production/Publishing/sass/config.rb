@@ -1,3 +1,3 @@
 require '../../../../../ext/packages/ext-theme-base/sass/utils.rb'
-require '../../../../../sass/config.rb'
-cache_path = '/Users/ashleycoker/Documents/PublishingApp/build/.sass-cache'
+Compass.add_project_configuration('../../../../../sass/config.rb')
+cache_path = '/Users/ashleycoker/Documents/Sites/Elster/training-PublishingApp/build/.sass-cache'

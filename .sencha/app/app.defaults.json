@@ -119,17 +119,46 @@
      *
      */
 
+
+    /**
+     *  "compressor": {
+     *      "type": "closure",
+     *      "languageIn": "ECMASCRIPT5"
+     *  }
+     *
+     */
+    "compressor": null,
+
     /**
      * override objects for setting build environment specific
      * settings.
      */
     "production": {
+        "compressor": {
+            "type": "yui"
+        }
     },
 
     "testing": {
+        "output": {
+            "deltas": {
+                "enable": false
+            },
+            "cache": {
+                "enable": false
+            }
+        }
     },
 
     "development": {
+        "output": {
+            "deltas": {
+                "enable": false
+            },
+            "cache": {
+                "enable": false
+            }
+        }
     },
 
 
@@ -202,7 +231,6 @@
      *              "path": "${app.output.resources}/images",
      *              "enable": false
      *          }
-     *      }
      *
      */
     "output": {
@@ -216,6 +244,25 @@
         "microloader": {
             "enable": true
         }
+    },
+    
+    /**
+    * Controls for localStorage caching
+    *   "cache": {
+    *       // This property controls whether localStorage caching of this manifest file is on or off. 
+    *       // if disabled no deltas will be generated during a build and full updates will be disabled
+    *       "enable": false,
+    *       
+    *       // This property allows for global toggle of deltas.
+    *       // If set to a string the value will be used as the path to where deltas will be generated relative to you build.
+    *       // If set to a Truthy Value the default path ok "deltas" will be used
+    *       // If set to a Falsey value or if this property is not present deltas will be disabled and not generated.
+    *       // 
+    *       "deltas": "deltas"
+    *   },
+    */
+    "cache": {
+        "deltas": "deltas"
     },
 
     /**
@@ -351,6 +398,32 @@
                 "path": "${app.dir}/sass/example/custom.js",
                 "isWidgetManifest": true
             }
-        ]
+        ],
+        "output": {
+            "deltas": {
+                "enable": false
+            },
+            "cache": {
+                "enable": false
+            }
+        }
     }
+
+    /**
+     * The space config object is used by the sencha app publish command to deploy this application to sencha space
+     * "space": {
+     *     // the space id for this application
+     *     "id": 12345,
+     *     // name of app in space deployments
+     *     "name": "${app.name}",
+     *     // space host
+     *     "host": "https://api.space.sencha.com/json.rpc",
+     *     // can be a zip file path, or a folder to be zipped and deployd to sencha space
+     *     "file": "${app.output.base}",
+     *     // These may be specified here, but are best specified in your user
+     *     // ~/.sencha/cmd/sencha.cfg file
+     *     "apiKey": "",
+     *     "secret": ""
+     * }
+     */
 }
